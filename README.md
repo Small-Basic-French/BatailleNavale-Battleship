@@ -1,2 +1,8 @@
-# BatailleNavale-Battleship
-Jeu de Bataille Navale en Small Basic / Battleship game in Small Basic
+# BatailleNavale
+
+Jeu de Bataille Navale en Small Basic.
+
+# Battleship
+
+Battleship game in Small Basic.
+
