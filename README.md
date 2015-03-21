@@ -6,6 +6,8 @@ Jeu de Bataille Navale en Small Basic.
 
 Battleship game in Small Basic.
 
+- You can import the game : [MRV593](http://smallbasic.com/program/?MRV593)
+
 # Changelog
 
 - V:0.6
