@@ -2,15 +2,21 @@
 
 Jeu de Bataille Navale en Small Basic.
 
-- Vous pouvez importer le jeu : [PMD822-0](http://smallbasic.com/program/?PMD822-0)
+- Vous pouvez importer le jeu : [PMD822-1](http://smallbasic.com/program/?PMD822-1)
 
 # Battleship
 
 Battleship game in Small Basic.
 
-- You can import the game : [MRV593-1](http://smallbasic.com/program/?MRV593-1)
+- You can import the game : [MRV593-2](http://smallbasic.com/program/?MRV593-2)
 
 # Changelog
+
+- V:1.0
+	- [fr] Affichage des cellules non autorisées à la création du tableau du joueur
+	- [fr] Version testée, donc release 1.0
+	- [en] Show fobidden cells in player board creation
+	- [en] Version tested, release 1.0
 
 - V:0.7
 	- [fr] Publication de la version française

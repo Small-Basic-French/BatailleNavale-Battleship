@@ -1,5 +1,5 @@
-' BatailleNavale v:0.7 - Yanos - PMD822-0
-version = "0.7"
+' BatailleNavale v:1.0 - Yanos - PMD822-1
+version = "1.0"
 
 ' Règles :
 ' - Deux joueurs possèdent une liste de bateaux, et doivent détruire les bateaux de leur adversaire
@@ -189,6 +189,39 @@ Sub GameCreateboardLoop
       
       ' Enregistre les modifications du bateau
       ships[currentShip] = ship
+      
+      ' Dessine les informations montrants les cellules qu'on ne peut pas utiliser
+      GraphicsWindow.BrushColor = "#FF8888"
+      mx = (ship["x"] - 2) * drawBoardCellSize
+      my = (ship["y"] - 2) * drawBoardCellSize
+      If ship["dir"] = "r" Then
+        x2 = ship["x"] + ship["size"]
+        y2 = ship["y"] + 1
+        w = (ship["size"] + 2) * drawBoardCellSize
+        h = 3 * drawBoardCellSize
+      Else
+        x2 = ship["x"] + 1
+        y2 = ship["y"] + ship["size"]
+        w = 3 * drawBoardCellSize        
+        h = (ship["size"] + 2) * drawBoardCellSize
+      EndIf
+      
+      ' Corrige les dimensions si elle sortent du tableau
+      If ship["x"] < 2 Then
+        mx = mx + drawBoardCellSize
+        w = w - drawBoardCellSize
+      EndIf
+      If x2 > 10 Then
+        w = w - drawBoardCellSize
+      EndIf
+      If ship["y"] < 2 Then
+        my = my + drawBoardCellSize
+        h = h - drawBoardCellSize
+      EndIf
+      If y2 > 10 Then
+        h = h - drawBoardCellSize
+      EndIf
+      GraphicsWindow.FillRectangle(x + mx, y + my, w, h)
       
       ' On se déplace vers le prochain bateau à traiter
       currentShip = currentShip + 1

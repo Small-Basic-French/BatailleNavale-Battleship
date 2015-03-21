@@ -1,5 +1,5 @@
-' Battleship v:0.7 - Yanos - MRV593-1
-version = "0.7"
+' Battleship v:1.0 - Yanos - MRV593-2
+version = "1.0"
 
 ' Rules :
 ' - Two players have some ships and need to destroy the opponent ships
@@ -189,6 +189,39 @@ Sub GameCreateboardLoop
       
       ' Save the ship changes
       ships[currentShip] = ship
+      
+      ' Draw information to display the forbidden cells
+      GraphicsWindow.BrushColor = "#FF8888"
+      mx = (ship["x"] - 2) * drawBoardCellSize
+      my = (ship["y"] - 2) * drawBoardCellSize
+      If ship["dir"] = "r" Then
+        x2 = ship["x"] + ship["size"]
+        y2 = ship["y"] + 1
+        w = (ship["size"] + 2) * drawBoardCellSize
+        h = 3 * drawBoardCellSize
+      Else
+        x2 = ship["x"] + 1
+        y2 = ship["y"] + ship["size"]
+        w = 3 * drawBoardCellSize        
+        h = (ship["size"] + 2) * drawBoardCellSize
+      EndIf
+      
+      ' Correct the dimensions if out of board
+      If ship["x"] < 2 Then
+        mx = mx + drawBoardCellSize
+        w = w - drawBoardCellSize
+      EndIf
+      If x2 > 10 Then
+        w = w - drawBoardCellSize
+      EndIf
+      If ship["y"] < 2 Then
+        my = my + drawBoardCellSize
+        h = h - drawBoardCellSize
+      EndIf
+      If y2 > 10 Then
+        h = h - drawBoardCellSize
+      EndIf
+      GraphicsWindow.FillRectangle(x + mx, y + my, w, h)
       
       ' Move to the next ship
       currentShip = currentShip + 1
