@@ -1,4 +1,4 @@
-' Battleship v:0.5 - Yanos
+' Battleship v:0.6 - Yanos
 
 ' Rules :
 ' - Two players have some ships and need to destroy the opponent ships
@@ -358,7 +358,7 @@ Sub ComputeNextMove
   ' - If find a ship don't try to find more but exclude impossible moves
   
   ' Random position in the 'availables cells' list 
-  pos = Math.GetRandomNumber(100 - Array.GetItemCount(computerGameState["moves"]))
+  pos = Math.GetRandomNumber(100 - Array.GetItemCount(computerGameState["moves"])) - 1
   
   ' We search the good cell from the position 
   i = 1
@@ -416,7 +416,6 @@ Sub ComputeNextMove
     GraphicsWindow.FillRectangle(dx + 2,dy + 2, drawBoardCellSize - 4, drawBoardCellSize - 4)
     GraphicsWindow.BrushColor = "Black"
     ' Exclude impossible next moves by adding them in the moves list
-    TextWindow.WriteLine(move)
     If move["x"] > 1 And move["y"] > 1 Then
       exclude["x"] = move["x"] - 1
       exclude["y"] = move["y"] - 1
@@ -558,8 +557,6 @@ Sub GotoBuildComputerShipsScreen
       EndIf
     EndWhile
   EndFor
-  'printShips = computerShips
-  'PrintBattlefield()
   
   ' Goto the play screen
   GotoPlayScreen()
@@ -660,6 +657,10 @@ Sub GotoEndGame
     winner = "Computer wins"
     moves = computerGameState["movecount"]
   EndIf
+  
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.FontBold = "False"
+  GraphicsWindow.FontSize = 18
   GraphicsWindow.DrawText(42, 240, winner + " the game in " + moves + " moves")
   
   ' Change game state
