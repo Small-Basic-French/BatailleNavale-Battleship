@@ -8,6 +8,13 @@ Battleship game in Small Basic.
 
 # Changelog
 
+- V:0.6
+	- [fr] Correction d'un bug dans l'IA de l'ordinateur
+	- [fr] Modifications cosmétiques
+	- [en] Fix bug in computer IA
+	- [en] Cosmetics changes
+
+
 - V:0.5
 	- [en] Computer IA finalized
 	- [fr] IA de l'ordinateur terminée
