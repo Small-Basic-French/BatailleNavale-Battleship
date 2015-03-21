@@ -2,19 +2,21 @@
 
 Jeu de Bataille Navale en Small Basic.
 
-- Vous pouvez importer le jeu : [PMD822](http://smallbasic.com/program/?PMD822)
+- Vous pouvez importer le jeu : [PMD822-0](http://smallbasic.com/program/?PMD822-0)
 
 # Battleship
 
 Battleship game in Small Basic.
 
-- You can import the game : [MRV593-0](http://smallbasic.com/program/?MRV593-0)
+- You can import the game : [MRV593-1](http://smallbasic.com/program/?MRV593-1)
 
 # Changelog
 
 - V:0.7
 	- [fr] Publication de la version française
+	- [fr] Ajoute la version dans le titre de la fenêtre
 	- [en] French publication
+	- [en] Add version int the windows title
 
 
 - V:0.6

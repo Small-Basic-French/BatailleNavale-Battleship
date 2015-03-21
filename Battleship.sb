@@ -1,4 +1,5 @@
-' Battleship v:0.7 - Yanos - MRV593-0
+' Battleship v:0.7 - Yanos - MRV593-1
+version = "0.7"
 
 ' Rules :
 ' - Two players have some ships and need to destroy the opponent ships
@@ -33,7 +34,7 @@ Sub InitializeGame
   BuildShips()
   ' Initialize the graphic windows
   GraphicsWindow.Show()
-  GraphicsWindow.Title = "Small Basic - Battleship"
+  GraphicsWindow.Title = "Small Basic - Battleship - " + version
   GraphicsWindow.Width = gw
   GraphicsWindow.Height = gh
   GraphicsWindow.CanResize = "False"
